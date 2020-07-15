@@ -1,0 +1,111 @@
+{
+  "id": "ohndcHvmg",
+  "type": "tv",
+  "title": {
+    "canonical": "Yakusoku no Neverland",
+    "romaji": "Yakusoku no Neverland",
+    "english": "The Promised Neverland",
+    "japanese": "約束のネバーランド",
+    "hiragana": "",
+    "synonyms": null
+  },
+  "summary": "Emma, Norman and Ray are the brightest kids at the Grace Field House orphanage. And under the care of the woman they refer to as \"Mom,\" all the kids have enjoyed a comfortable life. Good food, clean clothes and the perfect environment to learn - what more could an orphan ask for? One day, though, Emma and Norman uncover the dark truth of the outside world they are forbidden from seeing.",
+  "status": "finished",
+  "genres": [
+    "Sci-Fi",
+    "Mystery",
+    "Horror",
+    "Shounen"
+  ],
+  "startDate": "2019-01-11",
+  "endDate": "2019-03-28",
+  "episodeCount": 12,
+  "episodeLength": 23,
+  "source": "manga",
+  "image": {
+    "extension": ".png",
+    "width": 1280,
+    "height": 1802,
+    "averageColor": {
+      "hue": 0.11369103041589068,
+      "saturation": 0.17840531561461798,
+      "lightness": 0.36743724727244986
+    },
+    "lastModified": 1544358812
+  },
+  "firstChannel": "",
+  "rating": {
+    "overall": 8.64977375565611,
+    "story": 8.458823529411765,
+    "visuals": 7.658823529411764,
+    "soundtrack": 7.9,
+    "count": {
+      "overall": 221,
+      "story": 34,
+      "visuals": 34,
+      "soundtrack": 32
+    }
+  },
+  "popularity": {
+    "watching": 113,
+    "completed": 324,
+    "planned": 166,
+    "hold": 9,
+    "dropped": 8
+  },
+  "trailers": [
+    {
+      "service": "Youtube",
+      "serviceId": "TIT1UFYH5uU"
+    },
+    {
+      "service": "Youtube",
+      "serviceId": "ApLudqucq-s"
+    }
+  ],
+  "episodes": [
+    "o5_3ThFWgGz",
+    "T5l3ThFWRnz",
+    "oc_qohFWR4z",
+    "ocl3ThKWRSz",
+    "T5_3o2KWgHz",
+    "T5l3ohKWgDz",
+    "oc_qT2FZgdz",
+    "Tc_qohKWgKz",
+    "Tc_3o2KWg5z",
+    "Tc_qohKWRtz",
+    "Tc_qThFWR2z",
+    "o5l3ThFZgTz"
+  ],
+  "mappings": [
+    {
+      "service": "kitsu/anime",
+      "serviceId": "41312"
+    },
+    {
+      "service": "myanimelist/anime",
+      "serviceId": "37779"
+    },
+    {
+      "service": "anilist/anime",
+      "serviceId": "101759"
+    },
+    {
+      "service": "shoboi/anime",
+      "serviceId": "5159"
+    }
+  ],
+  "posts": null,
+  "likes": null,
+  "created": "2018-06-29T11:15:04Z",
+  "createdBy": "H7cpGpiig",
+  "edited": "2019-03-28T22:49:04Z",
+  "editedBy": "VJOK1ckvx",
+  "isDraft": false,
+  "studios": [
+    "TM5x2ZOmg"
+  ],
+  "producers": null,
+  "licensors": null,
+  "links": null
+}

@@ -1,0 +1,93 @@
+{
+  "id": "BEHHhFiiR",
+  "type": "movie",
+  "title": {
+    "canonical": "Made in Abyss: Fukaki Tamashii no Reimei",
+    "romaji": "Made in Abyss: Fukaki Tamashii no Reimei",
+    "english": "",
+    "japanese": "劇場版メイドインアビス 深き魂の黎明",
+    "hiragana": "",
+    "synonyms": null
+  },
+  "summary": "Made in Abyss sequel",
+  "status": "tba",
+  "genres": [
+    "Sci-Fi",
+    "Adventure",
+    "Mystery",
+    "Drama",
+    "Fantasy"
+  ],
+  "startDate": "2020-01-17",
+  "endDate": "",
+  "episodeCount": 1,
+  "episodeLength": 0,
+  "source": "web manga",
+  "image": {
+    "extension": ".jpg",
+    "width": 600,
+    "height": 767,
+    "averageColor": {
+      "hue": 0.8078722818607211,
+      "saturation": 0.09621037578453956,
+      "lightness": 0.28809796292057677
+    },
+    "lastModified": 1572769803
+  },
+  "firstChannel": "",
+  "rating": {
+    "overall": 7,
+    "story": 5,
+    "visuals": 5,
+    "soundtrack": 5,
+    "count": {
+      "overall": 1,
+      "story": 0,
+      "visuals": 0,
+      "soundtrack": 0
+    }
+  },
+  "popularity": {
+    "watching": 1,
+    "completed": 0,
+    "planned": 207,
+    "hold": 1,
+    "dropped": 0
+  },
+  "trailers": [
+    {
+      "service": "Youtube",
+      "serviceId": "vQdDXiB5Ikk"
+    }
+  ],
+  "episodes": null,
+  "mappings": [
+    {
+      "service": "myanimelist/anime",
+      "serviceId": "36862"
+    },
+    {
+      "service": "anilist/anime",
+      "serviceId": "100643"
+    },
+    {
+      "service": "kitsu/anime",
+      "serviceId": "14027"
+    }
+  ],
+  "posts": null,
+  "likes": null,
+  "created": "",
+  "createdBy": "",
+  "edited": "2019-01-28T11:18:51Z",
+  "editedBy": "VJOK1ckvx",
+  "isDraft": false,
+  "studios": [
+    "Uj0Urn8kgf"
+  ],
+  "producers": [
+    "Uj0Urn8kgf"
+  ],
+  "licensors": null,
+  "links": null
+}

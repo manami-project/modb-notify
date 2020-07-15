@@ -1,0 +1,93 @@
+{
+  "id": "Y4LniqnmR",
+  "type": "movie",
+  "title": {
+    "canonical": "Princess Principal 2",
+    "romaji": "Princess Principal 2",
+    "english": "",
+    "japanese": "プリンセス・プリンシパル 2",
+    "hiragana": "",
+    "synonyms": [
+      "Princess Principal Movie"
+    ]
+  },
+  "summary": "A six-part film depicting a story after the television series.",
+  "status": "upcoming",
+  "genres": [
+    "Action",
+    "Historical",
+    "Mystery"
+  ],
+  "startDate": "2020-04-10",
+  "endDate": "",
+  "episodeCount": 6,
+  "episodeLength": 0,
+  "source": "original",
+  "image": {
+    "extension": ".jpg",
+    "width": 1680,
+    "height": 2376,
+    "averageColor": {
+      "hue": 0.6340942464290482,
+      "saturation": 0.14902421071478306,
+      "lightness": 0.3835126268406195
+    },
+    "lastModified": 1526703503
+  },
+  "firstChannel": "",
+  "rating": {
+    "overall": 6,
+    "story": 5,
+    "visuals": 5,
+    "soundtrack": 5,
+    "count": {
+      "overall": 1,
+      "story": 0,
+      "visuals": 0,
+      "soundtrack": 0
+    }
+  },
+  "popularity": {
+    "watching": 2,
+    "completed": 0,
+    "planned": 45,
+    "hold": 0,
+    "dropped": 0
+  },
+  "trailers": [
+    {
+      "service": "Youtube",
+      "serviceId": "J4vTu8Iid9s"
+    }
+  ],
+  "episodes": null,
+  "mappings": [
+    {
+      "service": "kitsu/anime",
+      "serviceId": "41254"
+    },
+    {
+      "service": "anilist/anime",
+      "serviceId": "101595"
+    },
+    {
+      "service": "myanimelist/anime",
+      "serviceId": "37807"
+    },
+    {
+      "service": "anidb/anime",
+      "serviceId": "14064"
+    }
+  ],
+  "posts": null,
+  "likes": null,
+  "created": "2018-05-19T04:18:21Z",
+  "createdBy": "H7cpGpiig",
+  "edited": "2018-10-10T07:24:45Z",
+  "editedBy": "VJOK1ckvx",
+  "isDraft": false,
+  "studios": null,
+  "producers": null,
+  "licensors": null,
+  "links": null
+}

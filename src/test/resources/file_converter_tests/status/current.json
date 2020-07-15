@@ -1,0 +1,97 @@
+{
+  "id": "IkCdhKimR",
+  "type": "tv",
+  "title": {
+    "canonical": "Chihayafuru 3",
+    "romaji": "Chihayafuru 3",
+    "english": "",
+    "japanese": "ちはやふる３",
+    "hiragana": "ちはやふる３",
+    "synonyms": [
+      "Chihayafull 3"
+    ]
+  },
+  "summary": "Third season of the Chihayafuru series, announced by the voice actors at the \"Chihayafuru in Awara Week\" event.",
+  "status": "current",
+  "genres": [
+    "Drama",
+    "Game",
+    "Josei",
+    "School",
+    "Slice of Life",
+    "Sports"
+  ],
+  "startDate": "2019-10-23",
+  "endDate": "",
+  "episodeCount": 24,
+  "episodeLength": 0,
+  "source": "manga",
+  "image": {
+    "extension": ".jpg",
+    "width": 1200,
+    "height": 1714,
+    "averageColor": {
+      "hue": 0.9952422650321074,
+      "saturation": 0.1490861618798956,
+      "lightness": 0.7077897306782635
+    },
+    "lastModified": 1570555357
+  },
+  "firstChannel": "",
+  "rating": {
+    "overall": 7,
+    "story": 5,
+    "visuals": 5,
+    "soundtrack": 5,
+    "count": {
+      "overall": 1,
+      "story": 0,
+      "visuals": 0,
+      "soundtrack": 0
+    }
+  },
+  "popularity": {
+    "watching": 2,
+    "completed": 0,
+    "planned": 33,
+    "hold": 0,
+    "dropped": 0
+  },
+  "trailers": null,
+  "episodes": null,
+  "mappings": [
+    {
+      "service": "myanimelist/anime",
+      "serviceId": "37379"
+    },
+    {
+      "service": "anilist/anime",
+      "serviceId": "101215"
+    },
+    {
+      "service": "kitsu/anime",
+      "serviceId": "40998"
+    },
+    {
+      "service": "shoboi/anime",
+      "serviceId": "5460"
+    }
+  ],
+  "posts": [
+    "X9SHoaAZg"
+  ],
+  "likes": null,
+  "created": "",
+  "createdBy": "",
+  "edited": "2019-02-09T05:03:42Z",
+  "editedBy": "SxOOy-NiR",
+  "isDraft": false,
+  "studios": [
+    "bjA89n8zRR"
+  ],
+  "producers": [
+    "-C08rn8kR5"
+  ],
+  "licensors": null,
+  "links": null
+}
