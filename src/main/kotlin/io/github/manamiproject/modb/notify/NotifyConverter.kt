@@ -75,7 +75,7 @@ class NotifyConverter(
 
     private fun extractThumbnail(document: NotifyDocument) = URL("https://media.notify.moe/images/anime/small/${document.id}.webp")
 
-    private fun extractSynonyms(document: NotifyDocument): MutableList<String> {
+    private fun extractSynonyms(document: NotifyDocument): List<String> {
         val synonyms: List<String> = (document.title[SYNONYMS] as List<*>?)?.map { it as String } ?: emptyList()
 
         return document.title.filterNot { it.key == CANONICAL }
@@ -83,22 +83,20 @@ class NotifyConverter(
             .values
             .union(synonyms)
             .map { it as String }
-            .toMutableList()
     }
 
-    private fun extractSourcesEntry(document: NotifyDocument) = mutableListOf(config.buildAnimeLinkUrl(document.id))
+    private fun extractSourcesEntry(document: NotifyDocument) = listOf(config.buildAnimeLinkUrl(document.id))
 
-    private fun extractRelatedAnime(document: NotifyDocument): MutableList<URL> {
+    private fun extractRelatedAnime(document: NotifyDocument): List<URL> {
         val relationsFile = relationsDir.resolve("${document.id}.${config.fileSuffix()}")
 
         return if (relationsFile.regularFileExists()) {
             parseJson<NotifyRelations>(relationsFile.newInputStream())!!.items
                 ?.map { it.animeId }
                 ?.map { config.buildAnimeLinkUrl(it) }
-                ?.toMutableList()
-                ?: mutableListOf()
+                ?: emptyList()
         } else {
-            mutableListOf()
+            emptyList()
         }
     }
 
@@ -132,7 +130,7 @@ class NotifyConverter(
         )
     }
 
-    private fun extractTags(document: NotifyDocument): MutableList<String> = document.genres?.toMutableList() ?: mutableListOf()
+    private fun extractTags(document: NotifyDocument): List<String> = document.genres ?: emptyList()
 
     companion object {
         private const val CANONICAL = "canonical"
