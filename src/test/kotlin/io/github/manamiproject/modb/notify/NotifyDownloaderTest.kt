@@ -20,7 +20,7 @@ import java.net.URL
 internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by WireMockServerCreator() {
 
     @Test
-    fun `successfully download a page of type any and a page of type music`() {
+    fun `successfully download an anime`() {
         // given
         val testConfig = object: MetaDataProviderConfig by NotifyConfig {
             override fun hostname(): Hostname = "localhost"
