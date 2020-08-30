@@ -35,8 +35,8 @@ class NotifyConverter(
         require(relationsDir.directoryExists()) { "Directory for relations [$relationsDir] does not exist or is not a directory." }
     }
 
-    override fun convert(source: String): Anime {
-        val document = parseJson<NotifyDocument>(source)!!
+    override fun convert(rawContent: String): Anime {
+        val document = parseJson<NotifyDocument>(rawContent)!!
 
         return Anime(
             _title = extractTitle(document),
