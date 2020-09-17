@@ -117,9 +117,9 @@ class NotifyConverter(
         val year = Regex("[0-9]{4}").findAll(document.startDate).firstOrNull()?.value?.toInt() ?: 0
 
         val season = when(month) {
-            1,2,3 -> WINTER
-            4,5,6 -> SPRING
-            7,8,9 -> SUMMER
+            1, 2, 3 -> WINTER
+            4, 5, 6 -> SPRING
+            7, 8, 9 -> SUMMER
             10, 11, 12 -> FALL
             else -> UNDEFINED
         }
