@@ -26,7 +26,7 @@ import java.net.URL
  * @param relationsDir Directory containing the raw files for the related anime.
  * @throws IllegalArgumentException if the [relationsDir] doesn't exist or is not a directory.
  */
-class NotifyConverter(
+public class NotifyConverter(
     private val config: MetaDataProviderConfig = NotifyConfig,
     private val relationsDir: Directory
 ) : AnimeConverter {
@@ -132,7 +132,7 @@ class NotifyConverter(
 
     private fun extractTags(document: NotifyDocument): List<String> = document.genres ?: emptyList()
 
-    companion object {
+    private companion object {
         private const val CANONICAL = "canonical"
         private const val SYNONYMS = "synonyms"
     }

@@ -12,7 +12,7 @@ import io.github.manamiproject.modb.core.httpclient.HttpClient
  * @param config Configuration for downloading data.
  * @param httpClient To actually download the anime data.
  */
-class NotifyDownloader(
+public class NotifyDownloader(
     private val config: MetaDataProviderConfig,
     private val httpClient: HttpClient = DefaultHttpClient()
 ) : Downloader {

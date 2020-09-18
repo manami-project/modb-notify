@@ -9,7 +9,7 @@ import java.net.URL
  * Configuration for downloading anime data from notify.moe
  * @since 1.0.0
  */
-object NotifyConfig : MetaDataProviderConfig {
+public object NotifyConfig : MetaDataProviderConfig {
 
     override fun buildDataDownloadUrl(id: String): URL = URL("https://${hostname()}/api/anime/$id")
 
