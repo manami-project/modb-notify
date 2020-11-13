@@ -18,7 +18,7 @@ public class NotifyDownloader(
 ) : Downloader {
 
     override fun download(id: AnimeId, onDeadEntry: (AnimeId) -> Unit): String {
-        val response = httpClient.get(config.buildDataDownloadUrl(id))
+        val response = httpClient.get(config.buildDataDownloadLink(id).toURL())
 
         check(response.body.isNotBlank()) { "Response body was blank for [notifyId=$id] with response code [${response.code}]" }
 

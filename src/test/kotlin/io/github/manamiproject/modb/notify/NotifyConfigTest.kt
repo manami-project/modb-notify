@@ -2,7 +2,7 @@ package io.github.manamiproject.modb.notify
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import java.net.URL
+import java.net.URI
 
 internal class NotifyConfigTest {
 
@@ -25,27 +25,27 @@ internal class NotifyConfigTest {
     }
 
     @Test
-    fun `build anime link URL correctly`() {
+    fun `build anime link correctly`() {
         // given
         val id = "0-A-5Fimg"
 
         // when
-        val result = NotifyConfig.buildAnimeLinkUrl(id)
+        val result = NotifyConfig.buildAnimeLink(id)
 
         // then
-        assertThat(result).isEqualTo(URL("https://${NotifyConfig.hostname()}/anime/$id"))
+        assertThat(result).isEqualTo(URI("https://${NotifyConfig.hostname()}/anime/$id"))
     }
 
     @Test
-    fun `build data download URL correctly`() {
+    fun `build data download link correctly`() {
         // given
         val id = "1535"
 
         // when
-        val result = NotifyConfig.buildDataDownloadUrl(id)
+        val result = NotifyConfig.buildDataDownloadLink(id)
 
         // then
-        assertThat(result).isEqualTo(URL("https://${NotifyConfig.hostname()}/api/anime/$id"))
+        assertThat(result).isEqualTo(URI("https://${NotifyConfig.hostname()}/api/anime/$id"))
     }
 
     @Test

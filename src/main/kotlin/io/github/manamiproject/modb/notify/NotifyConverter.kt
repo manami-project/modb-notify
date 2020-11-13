@@ -7,16 +7,14 @@ import io.github.manamiproject.modb.core.extensions.Directory
 import io.github.manamiproject.modb.core.extensions.directoryExists
 import io.github.manamiproject.modb.core.extensions.newInputStream
 import io.github.manamiproject.modb.core.extensions.regularFileExists
-import io.github.manamiproject.modb.core.models.Anime
+import io.github.manamiproject.modb.core.models.*
 import io.github.manamiproject.modb.core.models.Anime.Status
 import io.github.manamiproject.modb.core.models.Anime.Status.*
 import io.github.manamiproject.modb.core.models.Anime.Type
 import io.github.manamiproject.modb.core.models.Anime.Type.*
-import io.github.manamiproject.modb.core.models.AnimeSeason
 import io.github.manamiproject.modb.core.models.AnimeSeason.Season.*
-import io.github.manamiproject.modb.core.models.Duration
 import io.github.manamiproject.modb.core.models.Duration.TimeUnit.MINUTES
-import java.net.URL
+import java.net.URI
 
 /**
  * The conversion requires two files. The file with all main data and a second file containing related anime.
@@ -71,11 +69,11 @@ public class NotifyConverter(
         }
     }
 
-    private fun extractPicture(document: NotifyDocument) = URL("https://media.notify.moe/images/anime/large/${document.id}.webp")
+    private fun extractPicture(document: NotifyDocument) = URI("https://media.notify.moe/images/anime/large/${document.id}.webp")
 
-    private fun extractThumbnail(document: NotifyDocument) = URL("https://media.notify.moe/images/anime/small/${document.id}.webp")
+    private fun extractThumbnail(document: NotifyDocument) = URI("https://media.notify.moe/images/anime/small/${document.id}.webp")
 
-    private fun extractSynonyms(document: NotifyDocument): List<String> {
+    private fun extractSynonyms(document: NotifyDocument): List<Title> {
         val synonyms: List<String> = (document.title[SYNONYMS] as List<*>?)?.map { it as String } ?: emptyList()
 
         return document.title.filterNot { it.key == CANONICAL }
@@ -85,15 +83,15 @@ public class NotifyConverter(
             .map { it as String }
     }
 
-    private fun extractSourcesEntry(document: NotifyDocument) = listOf(config.buildAnimeLinkUrl(document.id))
+    private fun extractSourcesEntry(document: NotifyDocument) = listOf(config.buildAnimeLink(document.id))
 
-    private fun extractRelatedAnime(document: NotifyDocument): List<URL> {
+    private fun extractRelatedAnime(document: NotifyDocument): List<URI> {
         val relationsFile = relationsDir.resolve("${document.id}.${config.fileSuffix()}")
 
         return if (relationsFile.regularFileExists()) {
             parseJson<NotifyRelations>(relationsFile.newInputStream())!!.items
                 ?.map { it.animeId }
-                ?.map { config.buildAnimeLinkUrl(it) }
+                ?.map { config.buildAnimeLink(it) }
                 ?: emptyList()
         } else {
             emptyList()
@@ -130,7 +128,7 @@ public class NotifyConverter(
         )
     }
 
-    private fun extractTags(document: NotifyDocument): List<String> = document.genres ?: emptyList()
+    private fun extractTags(document: NotifyDocument): List<Tag> = document.genres ?: emptyList()
 
     private companion object {
         private const val CANONICAL = "canonical"

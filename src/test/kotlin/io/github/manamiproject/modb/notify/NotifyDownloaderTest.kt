@@ -15,7 +15,7 @@ import io.github.manamiproject.modb.test.shouldNotBeInvoked
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import java.net.URL
+import java.net.URI
 
 internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by WireMockServerCreator() {
 
@@ -24,7 +24,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         // given
         val testConfig = object: MetaDataProviderConfig by NotifyConfig {
             override fun hostname(): Hostname = "localhost"
-            override fun buildDataDownloadUrl(id: String): URL = URL("http://localhost:$port/anime/$id")
+            override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
         }
 
         val id = "drmaMJIZg"
@@ -54,7 +54,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         // given
         val testConfig = object: MetaDataProviderConfig by NotifyConfig {
             override fun hostname(): Hostname = "localhost"
-            override fun buildDataDownloadUrl(id: String): URL = URL("http://localhost:$port/anime/$id")
+            override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
         }
 
         val id = "r0iztKiiR"
@@ -88,8 +88,8 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
 
         val testAnidbConfig = object: MetaDataProviderConfig by MetaDataProviderTestConfig {
             override fun hostname(): Hostname = "localhost"
-            override fun buildAnimeLinkUrl(id: AnimeId): URL = NotifyConfig.buildAnimeLinkUrl(id)
-            override fun buildDataDownloadUrl(id: String): URL = URL("http://${hostname()}:$port/anime/$id")
+            override fun buildAnimeLink(id: AnimeId): URI = NotifyConfig.buildAnimeLink(id)
+            override fun buildDataDownloadLink(id: String): URI = URI("http://${hostname()}:$port/anime/$id")
             override fun fileSuffix(): FileSuffix = NotifyConfig.fileSuffix()
         }
 

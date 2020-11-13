@@ -15,7 +15,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import java.net.URL
+import java.net.URI
 
 internal class NotifyConverterTest {
 
@@ -195,8 +195,8 @@ internal class NotifyConverterTest {
                     val result = converter.convert(testFile)
 
                     // then
-                    assertThat(result.picture).isEqualTo(URL("https://media.notify.moe/images/anime/large/IkCdhKimR.webp"))
-                    assertThat(result.thumbnail).isEqualTo(URL("https://media.notify.moe/images/anime/small/IkCdhKimR.webp"))
+                    assertThat(result.picture).isEqualTo(URI("https://media.notify.moe/images/anime/large/IkCdhKimR.webp"))
+                    assertThat(result.thumbnail).isEqualTo(URI("https://media.notify.moe/images/anime/small/IkCdhKimR.webp"))
                 }
             }
         }
@@ -260,7 +260,7 @@ internal class NotifyConverterTest {
                     val result = converter.convert(testFile)
 
                     // then
-                    assertThat(result.sources).containsExactly(URL("https://notify.moe/anime/0-A-5Fimg"))
+                    assertThat(result.sources).containsExactly(URI("https://notify.moe/anime/0-A-5Fimg"))
                 }
             }
         }
@@ -303,12 +303,12 @@ internal class NotifyConverterTest {
 
                     // then
                     assertThat(result.relatedAnime).containsExactly(
-                        URL("https://notify.moe/anime/CsBopKmmR"),
-                        URL("https://notify.moe/anime/I2ihtKimg"),
-                        URL("https://notify.moe/anime/T7qwpKmig"),
-                        URL("https://notify.moe/anime/U66k2FimR"),
-                        URL("https://notify.moe/anime/eav4hFmiR"),
-                        URL("https://notify.moe/anime/vvIppKiiR")
+                        URI("https://notify.moe/anime/CsBopKmmR"),
+                        URI("https://notify.moe/anime/I2ihtKimg"),
+                        URI("https://notify.moe/anime/T7qwpKmig"),
+                        URI("https://notify.moe/anime/U66k2FimR"),
+                        URI("https://notify.moe/anime/eav4hFmiR"),
+                        URI("https://notify.moe/anime/vvIppKiiR")
                     )
                 }
             }

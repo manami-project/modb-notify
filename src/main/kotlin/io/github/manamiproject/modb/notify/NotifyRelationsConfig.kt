@@ -1,7 +1,7 @@
 package io.github.manamiproject.modb.notify
 
 import io.github.manamiproject.modb.core.config.MetaDataProviderConfig
-import java.net.URL
+import java.net.URI
 
 /**
  * Configuration for downloading related anime from notify.moe.
@@ -9,5 +9,5 @@ import java.net.URL
  */
 public object NotifyRelationsConfig : MetaDataProviderConfig by NotifyConfig {
 
-    override fun buildDataDownloadUrl(id: String): URL = URL("https://notify.moe/api/animerelations/$id")
+    override fun buildDataDownloadLink(id: String): URI = URI("https://notify.moe/api/animerelations/$id")
 }
