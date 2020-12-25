@@ -112,7 +112,7 @@ public class NotifyConverter(
 
     private fun extractAnimeSeason(document: NotifyDocument): AnimeSeason {
         val month = Regex("-[0-9]{2}-").findAll(document.startDate).firstOrNull()?.value?.replace("-", "")?.toInt() ?: 0
-        val year = Regex("[0-9]{4}").findAll(document.startDate).firstOrNull()?.value?.toInt() ?: 0
+        val year = Regex("[0-9]{4}").findAll(document.startDate).firstOrNull()?.value?.toInt() ?: AnimeSeason.UNKNOWN_YEAR
 
         val season = when(month) {
             1, 2, 3 -> WINTER
@@ -124,7 +124,7 @@ public class NotifyConverter(
 
         return AnimeSeason(
             season = season,
-            _year = year
+            year = year
         )
     }
 
