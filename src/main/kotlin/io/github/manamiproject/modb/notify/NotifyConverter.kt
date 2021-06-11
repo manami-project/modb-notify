@@ -58,7 +58,7 @@ public class NotifyConverter(
     private fun extractEpisodes(document: NotifyDocument) = document.episodeCount
 
     private fun extractType(document: NotifyDocument): Type {
-        return when(document.type.toLowerCase()) {
+        return when(document.type.lowercase()) {
             "tv" -> TV
             "movie" -> Movie
             "ova" -> OVA
