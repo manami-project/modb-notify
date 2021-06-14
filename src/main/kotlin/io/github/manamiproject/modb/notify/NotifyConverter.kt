@@ -60,11 +60,11 @@ public class NotifyConverter(
     private fun extractType(document: NotifyDocument): Type {
         return when(document.type.lowercase()) {
             "tv" -> TV
-            "movie" -> Movie
+            "movie" -> MOVIE
             "ova" -> OVA
             "ona" -> ONA
-            "special" -> Special
-            "music" -> Special
+            "special" -> SPECIAL
+            "music" -> SPECIAL
             else -> throw IllegalStateException("Unknown type [${document.type}]")
         }
     }
@@ -101,9 +101,9 @@ public class NotifyConverter(
     private fun extractStatus(document: NotifyDocument): Status {
         return when(document.status) {
             "finished" -> FINISHED
-            "current" -> CURRENTLY
+            "current" -> ONGOING
             "upcoming" -> UPCOMING
-            "tba" -> UNKNOWN
+            "tba" -> Status.UNKNOWN
             else -> throw IllegalStateException("Unknown status [${document.status}]")
         }
     }
