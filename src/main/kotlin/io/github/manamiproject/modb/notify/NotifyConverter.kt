@@ -5,7 +5,6 @@ import io.github.manamiproject.modb.core.config.MetaDataProviderConfig
 import io.github.manamiproject.modb.core.converter.AnimeConverter
 import io.github.manamiproject.modb.core.extensions.Directory
 import io.github.manamiproject.modb.core.extensions.directoryExists
-import io.github.manamiproject.modb.core.extensions.newInputStream
 import io.github.manamiproject.modb.core.extensions.regularFileExists
 import io.github.manamiproject.modb.core.models.*
 import io.github.manamiproject.modb.core.models.Anime.Status
@@ -15,6 +14,7 @@ import io.github.manamiproject.modb.core.models.Anime.Type.*
 import io.github.manamiproject.modb.core.models.AnimeSeason.Season.*
 import io.github.manamiproject.modb.core.models.Duration.TimeUnit.MINUTES
 import java.net.URI
+import kotlin.io.path.inputStream
 
 /**
  * The conversion requires two files. The file with all main data and a second file containing related anime.
@@ -89,7 +89,7 @@ public class NotifyConverter(
         val relationsFile = relationsDir.resolve("${document.id}.${config.fileSuffix()}")
 
         return if (relationsFile.regularFileExists()) {
-            parseJson<NotifyRelations>(relationsFile.newInputStream())!!.items
+            parseJson<NotifyRelations>(relationsFile.inputStream())!!.items
                 ?.map { it.animeId }
                 ?.map { config.buildAnimeLink(it) }
                 ?: emptyList()
