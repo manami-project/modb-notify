@@ -36,23 +36,23 @@
   },
   "firstChannel": "NHK総合",
   "rating": {
-    "overall": 8,
+    "overall": 7.761538461538462,
     "story": 5,
     "visuals": 5,
     "soundtrack": 5,
     "count": {
-      "overall": 10,
+      "overall": 13,
       "story": 0,
       "visuals": 0,
       "soundtrack": 0
     }
   },
   "popularity": {
-    "watching": 5,
-    "completed": 10,
-    "planned": 39,
+    "watching": 6,
+    "completed": 14,
+    "planned": 52,
     "hold": 0,
-    "dropped": 2
+    "dropped": 4
   },
   "trailers": null,
   "episodes": [

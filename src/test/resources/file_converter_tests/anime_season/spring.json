@@ -4,7 +4,7 @@
   "title": {
     "canonical": "Kimetsu no Yaiba",
     "romaji": "Kimetsu no Yaiba",
-    "english": "Demon Slayer: Kimetsu no Yaiba",
+    "english": "Demon Slayer",
     "japanese": "鬼滅の刃",
     "hiragana": "きめつのやいば",
     "synonyms": [
@@ -38,23 +38,23 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 8.700978723404255,
-    "story": 8.523636363636363,
-    "visuals": 9.396296296296297,
-    "soundtrack": 8.657692307692308,
+    "overall": 8.699426523297491,
+    "story": 8.546835443037974,
+    "visuals": 9.308974358974359,
+    "soundtrack": 8.786486486486485,
     "count": {
-      "overall": 235,
-      "story": 55,
-      "visuals": 54,
-      "soundtrack": 52
+      "overall": 558,
+      "story": 79,
+      "visuals": 78,
+      "soundtrack": 74
     }
   },
   "popularity": {
-    "watching": 182,
-    "completed": 321,
-    "planned": 171,
-    "hold": 9,
-    "dropped": 10
+    "watching": 194,
+    "completed": 787,
+    "planned": 254,
+    "hold": 20,
+    "dropped": 18
   },
   "trailers": [
     {
@@ -114,7 +114,9 @@
   ],
   "posts": [
     "eps2c1zWg",
-    "9Kdb-etZg"
+    "9Kdb-etZg",
+    "-XWA-J9GR",
+    "uQ3TgzjGg"
   ],
   "likes": null,
   "created": "2018-07-07T17:15:46Z",

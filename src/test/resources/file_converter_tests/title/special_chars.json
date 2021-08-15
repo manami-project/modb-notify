@@ -20,7 +20,7 @@
   "startDate": "2015-10-24",
   "endDate": "2015-10-24",
   "episodeCount": 1,
-  "episodeLength": 0,
+  "episodeLength": 59,
   "source": "game",
   "image": {
     "extension": ".jpg",
@@ -49,7 +49,7 @@
   "popularity": {
     "watching": 0,
     "completed": 0,
-    "planned": 2,
+    "planned": 3,
     "hold": 0,
     "dropped": 0
   },

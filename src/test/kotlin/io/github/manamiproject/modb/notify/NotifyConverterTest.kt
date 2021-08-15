@@ -141,24 +141,6 @@ internal class NotifyConverterTest {
                     assertThat(result.type).isEqualTo(SPECIAL)
                 }
             }
-
-            @Test
-            fun `unknown type`() {
-                tempDirectory {
-                    // given
-                    val testFile = loadTestResource("file_converter_tests/type/unknown_type.json")
-
-                    val converter = NotifyConverter(relationsDir = tempDir)
-
-                    // when
-                    val result = assertThrows<IllegalStateException> {
-                        converter.convert(testFile)
-                    }
-
-                    // then
-                    assertThat(result).hasMessage("Unknown type [any unknown type here]")
-                }
-            }
         }
 
         @Nested

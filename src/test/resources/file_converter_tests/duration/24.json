@@ -38,23 +38,23 @@
   },
   "firstChannel": "日本テレビ",
   "rating": {
-    "overall": 8.669841269841271,
-    "story": 9,
-    "visuals": 7.25,
-    "soundtrack": 7.5,
+    "overall": 8.640787623066105,
+    "story": 8.450000000000001,
+    "visuals": 7.166666666666667,
+    "soundtrack": 7.25,
     "count": {
-      "overall": 98,
-      "story": 4,
-      "visuals": 4,
-      "soundtrack": 4
+      "overall": 158,
+      "story": 6,
+      "visuals": 6,
+      "soundtrack": 6
     }
   },
   "popularity": {
-    "watching": 24,
-    "completed": 96,
-    "planned": 205,
-    "hold": 35,
-    "dropped": 7
+    "watching": 40,
+    "completed": 146,
+    "planned": 324,
+    "hold": 66,
+    "dropped": 13
   },
   "trailers": [
     {

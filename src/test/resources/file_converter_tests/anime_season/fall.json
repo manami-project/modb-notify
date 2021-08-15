@@ -19,7 +19,7 @@
   "startDate": "2019-10-02",
   "endDate": "2019-12-25",
   "episodeCount": 12,
-  "episodeLength": 0,
+  "episodeLength": 23,
   "source": "light novel",
   "image": {
     "extension": ".jpg",
@@ -34,23 +34,23 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 7.625,
-    "story": 8.575,
-    "visuals": 8.428571428571429,
-    "soundtrack": 7.666666666666667,
+    "overall": 7.59296875,
+    "story": 8.511111111111111,
+    "visuals": 8.25,
+    "soundtrack": 7.428571428571429,
     "count": {
-      "overall": 56,
-      "story": 8,
-      "visuals": 7,
-      "soundtrack": 6
+      "overall": 128,
+      "story": 9,
+      "visuals": 8,
+      "soundtrack": 7
     }
   },
   "popularity": {
-    "watching": 41,
-    "completed": 66,
-    "planned": 53,
-    "hold": 3,
-    "dropped": 12
+    "watching": 47,
+    "completed": 155,
+    "planned": 90,
+    "hold": 10,
+    "dropped": 20
   },
   "trailers": [
     {
@@ -86,7 +86,7 @@
       "serviceId": "104464"
     },
     {
-      "service": "",
+      "service": "anidb/anime",
       "serviceId": "14442"
     },
     {

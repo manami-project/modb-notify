@@ -17,7 +17,7 @@
     "School"
   ],
   "startDate": "2018-03-21",
-  "endDate": "",
+  "endDate": "2018-03-21",
   "episodeCount": 4,
   "episodeLength": 20,
   "source": "web manga",
@@ -34,23 +34,23 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 8.4125,
-    "story": 9.75,
-    "visuals": 8.416666666666666,
-    "soundtrack": 8.8,
+    "overall": 8.407594936708861,
+    "story": 9.61111111111111,
+    "visuals": 8.444444444444445,
+    "soundtrack": 8.875,
     "count": {
-      "overall": 88,
-      "story": 6,
-      "visuals": 6,
-      "soundtrack": 5
+      "overall": 158,
+      "story": 9,
+      "visuals": 9,
+      "soundtrack": 8
     }
   },
   "popularity": {
-    "watching": 5,
-    "completed": 132,
-    "planned": 84,
-    "hold": 2,
-    "dropped": 0
+    "watching": 8,
+    "completed": 226,
+    "planned": 122,
+    "hold": 3,
+    "dropped": 1
   },
   "trailers": [
     {

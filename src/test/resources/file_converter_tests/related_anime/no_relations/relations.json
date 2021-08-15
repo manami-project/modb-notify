@@ -1,4 +1,13 @@
 {
   "animeId": "5Vd6nwsiR",
-  "items": []
+  "items": [
+    {
+      "animeId": "wmc_JUYWg",
+      "type": "summary"
+    },
+    {
+      "animeId": "On3DFh8WR",
+      "type": "sequel"
+    }
+  ]
 }

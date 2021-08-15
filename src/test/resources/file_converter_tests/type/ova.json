@@ -38,21 +38,21 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 6.56,
+    "overall": 6.510869565217392,
     "story": 5,
     "visuals": 6,
     "soundtrack": 5,
     "count": {
-      "overall": 25,
+      "overall": 46,
       "story": 1,
       "visuals": 1,
       "soundtrack": 1
     }
   },
   "popularity": {
-    "watching": 1,
-    "completed": 38,
-    "planned": 30,
+    "watching": 2,
+    "completed": 68,
+    "planned": 45,
     "hold": 0,
     "dropped": 0
   },

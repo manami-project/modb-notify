@@ -38,23 +38,23 @@
   },
   "firstChannel": "日本テレビ",
   "rating": {
-    "overall": 8.557614332861856,
-    "story": 8.875,
-    "visuals": 8.245000000000001,
-    "soundtrack": 8.46578947368421,
+    "overall": 8.588314671260402,
+    "story": 8.812676056338026,
+    "visuals": 8.337681159420288,
+    "soundtrack": 8.363636363636365,
     "count": {
-      "overall": 707,
-      "story": 40,
-      "visuals": 40,
-      "soundtrack": 38
+      "overall": 1161,
+      "story": 71,
+      "visuals": 69,
+      "soundtrack": 66
     }
   },
   "popularity": {
-    "watching": 21,
-    "completed": 864,
-    "planned": 116,
-    "hold": 34,
-    "dropped": 25
+    "watching": 45,
+    "completed": 1435,
+    "planned": 220,
+    "hold": 58,
+    "dropped": 48
   },
   "trailers": [
     {
@@ -131,7 +131,9 @@
       "serviceId": "1376"
     }
   ],
-  "posts": null,
+  "posts": [
+    "9bXfhc1GR"
+  ],
   "likes": null,
   "created": "",
   "createdBy": "",

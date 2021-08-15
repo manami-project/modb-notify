@@ -37,23 +37,23 @@
   },
   "firstChannel": "TOKYO MX",
   "rating": {
-    "overall": 7.027327327327326,
-    "story": 7.4,
-    "visuals": 8.25,
-    "soundtrack": 7.5,
+    "overall": 7.022972339428036,
+    "story": 7.6875,
+    "visuals": 9.333333333333334,
+    "soundtrack": 8.2,
     "count": {
-      "overall": 148,
-      "story": 5,
-      "visuals": 3,
-      "soundtrack": 3
+      "overall": 237,
+      "story": 8,
+      "visuals": 6,
+      "soundtrack": 5
     }
   },
   "popularity": {
-    "watching": 8,
-    "completed": 174,
-    "planned": 80,
-    "hold": 9,
-    "dropped": 26
+    "watching": 20,
+    "completed": 294,
+    "planned": 135,
+    "hold": 14,
+    "dropped": 31
   },
   "trailers": [
     {

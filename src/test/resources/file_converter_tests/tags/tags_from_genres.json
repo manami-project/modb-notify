@@ -10,7 +10,7 @@
     "synonyms": null
   },
   "summary": "Shuichi Kagaya an ordinary high school kid in a boring little town. But when a beautiful classmate is caught in a warehouse fire, he discovers a mysterious power: he can transform into a furry dog with an oversized revolver and a zipper down his back. He saves the girl's life, sharing his secret with her. But she's searching for the sister who killed her family, and she doesn't care how degrading it gets: she will use Shuichi to accomplish her mission …",
-  "status": "current",
+  "status": "finished",
   "genres": [
     "Comedy",
     "Drama",
@@ -35,23 +35,23 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 7.625,
-    "story": 5.833333333333333,
-    "visuals": 7,
-    "soundtrack": 6.333333333333333,
+    "overall": 7.153960396039603,
+    "story": 7.993333333333334,
+    "visuals": 8.513333333333334,
+    "soundtrack": 7.714285714285714,
     "count": {
-      "overall": 6,
-      "story": 2,
-      "visuals": 2,
-      "soundtrack": 2
+      "overall": 101,
+      "story": 15,
+      "visuals": 15,
+      "soundtrack": 14
     }
   },
   "popularity": {
-    "watching": 46,
-    "completed": 0,
-    "planned": 35,
-    "hold": 0,
-    "dropped": 2
+    "watching": 53,
+    "completed": 134,
+    "planned": 105,
+    "hold": 13,
+    "dropped": 13
   },
   "trailers": [
     {
@@ -108,7 +108,9 @@
       "serviceId": "5636"
     }
   ],
-  "posts": null,
+  "posts": [
+    "GcOeY3GGR"
+  ],
   "likes": null,
   "created": "2019-03-24T14:48:35Z",
   "createdBy": "VJOK1ckvx",

@@ -38,23 +38,23 @@
   },
   "firstChannel": "フジテレビ系列",
   "rating": {
-    "overall": 7.257487922705314,
-    "story": 7.75,
-    "visuals": 7.25,
-    "soundtrack": 7.25,
+    "overall": 7.3869731800766285,
+    "story": 8,
+    "visuals": 7.5,
+    "soundtrack": 8.25,
     "count": {
-      "overall": 46,
-      "story": 3,
-      "visuals": 3,
-      "soundtrack": 3
+      "overall": 58,
+      "story": 4,
+      "visuals": 4,
+      "soundtrack": 4
     }
   },
   "popularity": {
-    "watching": 11,
-    "completed": 42,
-    "planned": 39,
-    "hold": 13,
-    "dropped": 16
+    "watching": 13,
+    "completed": 60,
+    "planned": 63,
+    "hold": 19,
+    "dropped": 21
   },
   "trailers": [
     {

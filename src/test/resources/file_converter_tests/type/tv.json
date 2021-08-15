@@ -38,23 +38,23 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 7.7388059701492535,
-    "story": 8.602083333333335,
-    "visuals": 9.100000000000001,
-    "soundtrack": 8.542222222222223,
+    "overall": 7.654616588419408,
+    "story": 8.45185185185185,
+    "visuals": 8.946753246753246,
+    "soundtrack": 8.442465753424656,
     "count": {
-      "overall": 335,
-      "story": 48,
-      "visuals": 45,
-      "soundtrack": 45
+      "overall": 639,
+      "story": 81,
+      "visuals": 77,
+      "soundtrack": 73
     }
   },
   "popularity": {
-    "watching": 252,
-    "completed": 362,
-    "planned": 226,
-    "hold": 21,
-    "dropped": 38
+    "watching": 275,
+    "completed": 725,
+    "planned": 330,
+    "hold": 39,
+    "dropped": 65
   },
   "trailers": [
     {
@@ -118,7 +118,10 @@
       "serviceId": "153714"
     }
   ],
-  "posts": null,
+  "posts": [
+    "qBCqOZpGR",
+    "DzL8jMtGg"
+  ],
   "likes": null,
   "created": "",
   "createdBy": "",
@@ -141,7 +144,8 @@
     "bC0UrnUkRVz",
     "-j0Ur78kRw",
     "Wq0Ur7Ukg1",
-    "xCAUr7UkRaz"
+    "xCAUr7UkRaz",
+    "eYvVh_uWg"
   ],
   "licensors": [
     "bj0U9nUkg5"

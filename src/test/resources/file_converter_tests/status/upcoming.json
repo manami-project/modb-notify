@@ -1,93 +1,111 @@
 {
-  "id": "Y4LniqnmR",
-  "type": "movie",
+  "id": "rBaaLj2Wg",
+  "type": "tv",
   "title": {
-    "canonical": "Princess Principal 2",
-    "romaji": "Princess Principal 2",
-    "english": "",
-    "japanese": "プリンセス・プリンシパル 2",
+    "canonical": "Tate no Yuusha no Nariagari Season 2",
+    "romaji": "Tate no Yuusha no Nariagari Season 2",
+    "english": "The Rising of the Shield Hero Season 2",
+    "japanese": "盾の勇者の成り上がり Season2",
     "hiragana": "",
     "synonyms": [
-      "Princess Principal Movie"
+      "Tate no Yuusha no Nariagari 2nd Season"
     ]
   },
-  "summary": "A six-part film depicting a story after the television series.",
+  "summary": "Second season of Tate no Yuusha no Nariagari.",
   "status": "upcoming",
   "genres": [
     "Action",
-    "Historical",
-    "Mystery"
+    "Adventure",
+    "Drama",
+    "Fantasy"
   ],
-  "startDate": "2020-04-10",
+  "startDate": "2022-04",
   "endDate": "",
-  "episodeCount": 6,
-  "episodeLength": 0,
-  "source": "original",
+  "episodeCount": 0,
+  "episodeLength": 24,
+  "source": "light novel",
   "image": {
     "extension": ".jpg",
-    "width": 1680,
-    "height": 2376,
+    "width": 400,
+    "height": 600,
     "averageColor": {
-      "hue": 0.6340942464290482,
-      "saturation": 0.14902421071478306,
-      "lightness": 0.3835126268406195
+      "hue": 0.06367492407700226,
+      "saturation": 0.31684042274017704,
+      "lightness": 0.31980621042191193
     },
-    "lastModified": 1526703503
+    "lastModified": 1599340395
   },
   "firstChannel": "",
   "rating": {
-    "overall": 6,
-    "story": 5,
-    "visuals": 5,
-    "soundtrack": 5,
+    "overall": 9.7,
+    "story": 7.5,
+    "visuals": 7.5,
+    "soundtrack": 7.5,
     "count": {
-      "overall": 1,
-      "story": 0,
-      "visuals": 0,
-      "soundtrack": 0
+      "overall": 4,
+      "story": 1,
+      "visuals": 1,
+      "soundtrack": 1
     }
   },
   "popularity": {
-    "watching": 2,
-    "completed": 0,
-    "planned": 45,
-    "hold": 0,
-    "dropped": 0
+    "watching": 9,
+    "completed": 2,
+    "planned": 299,
+    "hold": 1,
+    "dropped": 1
   },
   "trailers": [
     {
       "service": "Youtube",
-      "serviceId": "J4vTu8Iid9s"
+      "serviceId": "PsdihSpwYMY"
     }
   ],
   "episodes": null,
   "mappings": [
     {
       "service": "kitsu/anime",
-      "serviceId": "41254"
+      "serviceId": "42530"
     },
     {
       "service": "anilist/anime",
-      "serviceId": "101595"
+      "serviceId": "111321"
     },
     {
       "service": "myanimelist/anime",
-      "serviceId": "37807"
+      "serviceId": "40356"
     },
     {
       "service": "anidb/anime",
-      "serviceId": "14064"
+      "serviceId": "15070"
     }
   ],
-  "posts": null,
+  "posts": [
+    "wnmy_j_Wg",
+    "JbDFwY_Gg"
+  ],
   "likes": null,
-  "created": "2018-05-19T04:18:21Z",
-  "createdBy": "H7cpGpiig",
-  "edited": "2018-10-10T07:24:45Z",
-  "editedBy": "VJOK1ckvx",
+  "created": "2019-10-10T13:22:21Z",
+  "createdBy": "ivAN5yMiR",
+  "edited": "",
+  "editedBy": "",
   "isDraft": false,
-  "studios": null,
-  "producers": null,
+  "studios": [
+    "Uj0Urn8kgf",
+    "4q0Ur7UzRh"
+  ],
+  "producers": [
+    "ZsSFmHmig"
+  ],
   "licensors": null,
-  "links": null
+  "links": [
+    {
+      "title": "Website",
+      "url": "http://shieldhero-anime.jp/"
+    },
+    {
+      "title": "Twitter",
+      "url": "https://twitter.com/shieldheroanime"
+    }
+  ]
 }

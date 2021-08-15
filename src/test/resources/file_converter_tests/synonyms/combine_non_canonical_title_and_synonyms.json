@@ -41,23 +41,23 @@
   },
   "firstChannel": "",
   "rating": {
-    "overall": 8.176470588235293,
-    "story": 8.485714285714286,
-    "visuals": 8.72857142857143,
-    "soundtrack": 8.680952380952382,
+    "overall": 8.128980891719745,
+    "story": 8.593103448275862,
+    "visuals": 8.882758620689655,
+    "soundtrack": 8.546428571428573,
     "count": {
-      "overall": 221,
-      "story": 21,
-      "visuals": 21,
-      "soundtrack": 21
+      "overall": 314,
+      "story": 29,
+      "visuals": 29,
+      "soundtrack": 28
     }
   },
   "popularity": {
-    "watching": 185,
-    "completed": 194,
-    "planned": 258,
-    "hold": 48,
-    "dropped": 22
+    "watching": 195,
+    "completed": 307,
+    "planned": 369,
+    "hold": 57,
+    "dropped": 38
   },
   "trailers": [
     {

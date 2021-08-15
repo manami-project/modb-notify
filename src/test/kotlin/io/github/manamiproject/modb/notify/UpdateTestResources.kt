@@ -35,11 +35,10 @@ fun main() {
 
     downloader.download("0-A-5Fimg").writeToFile(resourceFile("file_converter_tests/sources/0-A-5Fimg.json"))
 
-    downloader.download("IkCdhKimR").writeToFile(resourceFile("file_converter_tests/status/current.json"))
+    downloader.download("Y2eEDZzMR").writeToFile(resourceFile("file_converter_tests/status/current.json"))
     downloader.download("Ml2V2KiiR").writeToFile(resourceFile("file_converter_tests/status/finished.json"))
-    downloader.download("FL0V2Kmmg").writeToFile(resourceFile("file_converter_tests/status/not_mapped.json"))
-    downloader.download("BEHHhFiiR").writeToFile(resourceFile("file_converter_tests/status/tba.json"))
-    downloader.download("Y4LniqnmR").writeToFile(resourceFile("file_converter_tests/status/upcoming.json"))
+    downloader.download("OkibM4KGg").writeToFile(resourceFile("file_converter_tests/status/tba.json"))
+    downloader.download("rBaaLj2Wg").writeToFile(resourceFile("file_converter_tests/status/upcoming.json"))
 
     downloader.download("DtwM2Kmig").writeToFile(resourceFile("file_converter_tests/synonyms/combine_non_canonical_title_and_synonyms.json"))
     downloader.download("rTgwpFmmg").writeToFile(resourceFile("file_converter_tests/synonyms/synonyms_is_null.json"))
@@ -55,7 +54,6 @@ fun main() {
     downloader.download("MYsOvq7ig").writeToFile(resourceFile("file_converter_tests/type/ova.json"))
     downloader.download("a8RVhKmmR").writeToFile(resourceFile("file_converter_tests/type/special.json"))
     downloader.download("Ml2V2KiiR").writeToFile(resourceFile("file_converter_tests/type/tv.json"))
-    downloader.download("Ml2V2KiiR").writeToFile(resourceFile("file_converter_tests/type/unknown_type.json"))
 }
 
 private fun resourceFile(file: String): Path {

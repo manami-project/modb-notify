@@ -17,7 +17,7 @@
   "startDate": "2013-06-08",
   "endDate": "2013-06-08",
   "episodeCount": 1,
-  "episodeLength": 0,
+  "episodeLength": 1,
   "source": "original",
   "image": {
     "extension": ".jpg",
@@ -46,7 +46,7 @@
   "popularity": {
     "watching": 0,
     "completed": 0,
-    "planned": 0,
+    "planned": 1,
     "hold": 0,
     "dropped": 0
   },
