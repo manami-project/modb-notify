@@ -253,7 +253,7 @@ internal class NotifyConverterTest {
             fun `extract id 0-A-5Fimg`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/sources/id_0-A-5Fimg.json")
+                    val testFile = loadTestResource("file_converter_tests/sources/0-A-5Fimg.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -419,24 +419,6 @@ internal class NotifyConverterTest {
 
                     // then
                     assertThat(result.status).isEqualTo(Anime.Status.UNKNOWN)
-                }
-            }
-
-            @Test
-            fun `throws exception for a value which is not mapped`() {
-                tempDirectory {
-                    // given
-                    val testFile = loadTestResource("file_converter_tests/status/not_mapped.json")
-
-                    val converter = NotifyConverter(relationsDir = tempDir)
-
-                    // when
-                    val result = assertThrows<IllegalStateException> {
-                        converter.convert(testFile)
-                    }
-
-                    // then
-                    assertThat(result).hasMessage("Unknown status [something else]")
                 }
             }
         }
