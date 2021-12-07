@@ -3,6 +3,7 @@ package io.github.manamiproject.modb.notify
 import io.github.manamiproject.modb.core.config.AnimeId
 import io.github.manamiproject.modb.core.config.MetaDataProviderConfig
 import io.github.manamiproject.modb.core.downloader.Downloader
+import io.github.manamiproject.modb.core.extensions.EMPTY
 import io.github.manamiproject.modb.core.httpclient.DefaultHttpClient
 import io.github.manamiproject.modb.core.httpclient.HttpClient
 
@@ -24,6 +25,10 @@ public class NotifyDownloader(
 
         return when (response.code) {
             200 -> response.body
+            404 -> {
+                onDeadEntry.invoke(id)
+                EMPTY
+            }
             else -> throw IllegalStateException("Unable to determine the correct case for [notifyId=$id], [responseCode=${response.code}]")
         }
     }

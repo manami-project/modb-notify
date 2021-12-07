@@ -50,6 +50,38 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
     }
 
     @Test
+    fun `invoke lambda in case of a dead entry`() {
+        // given
+        val testConfig = object: MetaDataProviderConfig by NotifyConfig {
+            override fun hostname(): Hostname = "localhost"
+            override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
+        }
+
+        val id = "drmaMJIZg"
+
+        serverInstance.stubFor(
+            get(urlPathEqualTo("/anime/$id")).willReturn(
+                aResponse()
+                    .withHeader("Content-Type", "plain/text")
+                    .withStatus(404)
+                    .withBody("Not found: Key not found:")
+            )
+        )
+
+        val downloader = NotifyDownloader(testConfig)
+
+        var deadEntriesHasBeenInvoked = false
+
+        // when
+        downloader.download(id) {
+            deadEntriesHasBeenInvoked = true
+        }
+
+        // then
+        assertThat(deadEntriesHasBeenInvoked).isTrue()
+    }
+
+    @Test
     fun `unhandled response code throws exception`() {
         // given
         val testConfig = object: MetaDataProviderConfig by NotifyConfig {
