@@ -1,6 +1,5 @@
 package io.github.manamiproject.modb.notify
 
-import io.github.manamiproject.modb.core.extensions.copyTo
 import io.github.manamiproject.modb.core.extensions.copyToSuspedable
 import io.github.manamiproject.modb.core.models.Anime
 import io.github.manamiproject.modb.core.models.Anime.Status.*
