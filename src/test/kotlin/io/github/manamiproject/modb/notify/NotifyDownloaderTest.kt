@@ -11,10 +11,11 @@ import io.github.manamiproject.modb.core.extensions.toAnimeId
 import io.github.manamiproject.modb.core.httpclient.APPLICATION_JSON
 import io.github.manamiproject.modb.test.MockServerTestCase
 import io.github.manamiproject.modb.test.WireMockServerCreator
+import io.github.manamiproject.modb.test.exceptionExpected
 import io.github.manamiproject.modb.test.shouldNotBeInvoked
+import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import java.net.URI
 
 internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by WireMockServerCreator() {
@@ -41,8 +42,10 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         val downloader = NotifyDownloader(testConfig)
 
         // when
-        val result = downloader.download(id) {
-            shouldNotBeInvoked()
+        val result = runBlocking {
+            downloader.downloadSuspendable(id) {
+                shouldNotBeInvoked()
+            }
         }
 
         // then
@@ -73,8 +76,10 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         var deadEntriesHasBeenInvoked = false
 
         // when
-        downloader.download(id) {
-            deadEntriesHasBeenInvoked = true
+        runBlocking {
+            downloader.downloadSuspendable(id) {
+                deadEntriesHasBeenInvoked = true
+            }
         }
 
         // then
@@ -103,8 +108,8 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         val downloader = NotifyDownloader(testConfig)
 
         // when
-        val result = assertThrows<IllegalStateException> {
-            downloader.download(id) {
+        val result = exceptionExpected<IllegalStateException> {
+            downloader.downloadSuspendable(id) {
                 shouldNotBeInvoked()
             }
         }
@@ -137,8 +142,8 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         val downloader = NotifyDownloader(testAnidbConfig)
 
         // when
-        val result = assertThrows<IllegalStateException> {
-            downloader.download(id.toAnimeId()) { shouldNotBeInvoked() }
+        val result = exceptionExpected<IllegalStateException> {
+            downloader.downloadSuspendable(id.toAnimeId()) { shouldNotBeInvoked() }
         }
 
         // then
