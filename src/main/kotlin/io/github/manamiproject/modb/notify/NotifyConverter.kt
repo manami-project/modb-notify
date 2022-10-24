@@ -1,10 +1,12 @@
 package io.github.manamiproject.modb.notify
 
-import io.github.manamiproject.modb.core.Json.parseJson
+import io.github.manamiproject.modb.core.Json
 import io.github.manamiproject.modb.core.config.MetaDataProviderConfig
 import io.github.manamiproject.modb.core.converter.AnimeConverter
+import io.github.manamiproject.modb.core.coroutines.ModbDispatchers.LIMITED_CPU
 import io.github.manamiproject.modb.core.extensions.Directory
 import io.github.manamiproject.modb.core.extensions.directoryExists
+import io.github.manamiproject.modb.core.extensions.readFileSuspendable
 import io.github.manamiproject.modb.core.extensions.regularFileExists
 import io.github.manamiproject.modb.core.models.*
 import io.github.manamiproject.modb.core.models.Anime.Status
@@ -13,8 +15,9 @@ import io.github.manamiproject.modb.core.models.Anime.Type
 import io.github.manamiproject.modb.core.models.Anime.Type.*
 import io.github.manamiproject.modb.core.models.AnimeSeason.Season.*
 import io.github.manamiproject.modb.core.models.Duration.TimeUnit.MINUTES
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import java.net.URI
-import kotlin.io.path.inputStream
 
 /**
  * The conversion requires two files. The file with all main data and a second file containing related anime.
@@ -26,17 +29,24 @@ import kotlin.io.path.inputStream
  */
 public class NotifyConverter(
     private val config: MetaDataProviderConfig = NotifyConfig,
-    private val relationsDir: Directory
+    private val relationsDir: Directory,
 ) : AnimeConverter {
 
     init {
         require(relationsDir.directoryExists()) { "Directory for relations [$relationsDir] does not exist or is not a directory." }
     }
 
-    override fun convert(rawContent: String): Anime {
-        val document = parseJson<NotifyDocument>(rawContent)!!
+    @Deprecated("Use coroutines",
+        ReplaceWith("runBlocking { convertSuspendable(rawContent) }", "kotlinx.coroutines.runBlocking")
+    )
+    override fun convert(rawContent: String): Anime = runBlocking {
+        convertSuspendable(rawContent)
+    }
 
-        return Anime(
+    override suspend fun convertSuspendable(rawContent: String): Anime = withContext(LIMITED_CPU) {
+        val document = Json.parseJsonSuspendable<NotifyDocument>(rawContent)!!
+
+        return@withContext Anime(
             _title = extractTitle(document),
             episodes = extractEpisodes(document),
             type = extractType(document),
@@ -85,11 +95,11 @@ public class NotifyConverter(
 
     private fun extractSourcesEntry(document: NotifyDocument) = listOf(config.buildAnimeLink(document.id))
 
-    private fun extractRelatedAnime(document: NotifyDocument): List<URI> {
+    private suspend fun extractRelatedAnime(document: NotifyDocument): List<URI> = withContext(LIMITED_CPU) {
         val relationsFile = relationsDir.resolve("${document.id}.${config.fileSuffix()}")
 
-        return if (relationsFile.regularFileExists()) {
-            parseJson<NotifyRelations>(relationsFile.inputStream())!!.items
+        return@withContext if (relationsFile.regularFileExists()) {
+            Json.parseJsonSuspendable<NotifyRelations>(relationsFile.readFileSuspendable())!!.items
                 ?.map { it.animeId }
                 ?.map { config.buildAnimeLink(it) }
                 ?: emptyList()
