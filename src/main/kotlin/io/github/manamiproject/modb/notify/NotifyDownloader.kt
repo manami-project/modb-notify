@@ -28,7 +28,7 @@ public class NotifyDownloader(
         downloadSuspendable(id, onDeadEntry)
     }
 
-    override suspend fun downloadSuspendable(id: AnimeId, onDeadEntry: (AnimeId) -> Unit): String = withContext(LIMITED_NETWORK) {
+    override suspend fun downloadSuspendable(id: AnimeId, onDeadEntry: suspend (AnimeId) -> Unit): String = withContext(LIMITED_NETWORK) {
         val response = httpClient.getSuspedable(config.buildDataDownloadLink(id).toURL())
 
         check(response.body.isNotBlank()) { "Response body was blank for [notifyId=$id] with response code [${response.code}]" }
