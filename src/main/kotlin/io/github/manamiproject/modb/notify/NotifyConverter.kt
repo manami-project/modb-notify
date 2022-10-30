@@ -4,10 +4,7 @@ import io.github.manamiproject.modb.core.Json
 import io.github.manamiproject.modb.core.config.MetaDataProviderConfig
 import io.github.manamiproject.modb.core.converter.AnimeConverter
 import io.github.manamiproject.modb.core.coroutines.ModbDispatchers.LIMITED_CPU
-import io.github.manamiproject.modb.core.extensions.Directory
-import io.github.manamiproject.modb.core.extensions.directoryExists
-import io.github.manamiproject.modb.core.extensions.readFileSuspendable
-import io.github.manamiproject.modb.core.extensions.regularFileExists
+import io.github.manamiproject.modb.core.extensions.*
 import io.github.manamiproject.modb.core.models.*
 import io.github.manamiproject.modb.core.models.Anime.Status
 import io.github.manamiproject.modb.core.models.Anime.Status.*
@@ -36,9 +33,7 @@ public class NotifyConverter(
         require(relationsDir.directoryExists()) { "Directory for relations [$relationsDir] does not exist or is not a directory." }
     }
 
-    @Deprecated("Use coroutines",
-        ReplaceWith("runBlocking { convertSuspendable(rawContent) }", "kotlinx.coroutines.runBlocking")
-    )
+    @Deprecated("Use coroutines", ReplaceWith(EMPTY))
     override fun convert(rawContent: String): Anime = runBlocking {
         convertSuspendable(rawContent)
     }
