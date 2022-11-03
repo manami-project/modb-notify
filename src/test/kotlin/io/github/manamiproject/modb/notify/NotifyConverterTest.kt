@@ -37,7 +37,7 @@ internal class NotifyConverterTest {
     
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
     
                     // then
@@ -59,7 +59,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -77,7 +77,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -95,7 +95,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -113,7 +113,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -131,7 +131,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -149,7 +149,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -171,7 +171,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -193,7 +193,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -216,7 +216,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -242,7 +242,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -264,7 +264,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -288,7 +288,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -313,7 +313,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(srcFile)
+                        converter.convert(srcFile)
                     }
 
                     // then
@@ -345,7 +345,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(srcFile)
+                        converter.convert(srcFile)
                     }
 
                     // then
@@ -371,7 +371,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(srcFile)
+                        converter.convert(srcFile)
                     }
 
                     // then
@@ -393,7 +393,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -411,7 +411,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -429,7 +429,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -447,7 +447,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -469,7 +469,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -492,7 +492,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -514,7 +514,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -532,7 +532,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -550,7 +550,7 @@ internal class NotifyConverterTest {
 
                     // when
                     val result = runBlocking {
-                        converter.convertSuspendable(testFile)
+                        converter.convert(testFile)
                     }
 
                     // then
@@ -575,7 +575,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then
@@ -593,7 +593,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then
@@ -611,7 +611,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then
@@ -629,7 +629,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then
@@ -647,7 +647,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then
@@ -665,7 +665,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then
@@ -683,7 +683,7 @@ internal class NotifyConverterTest {
 
                         // when
                         val result = runBlocking {
-                            converter.convertSuspendable(testFile)
+                            converter.convert(testFile)
                         }
 
                         // then

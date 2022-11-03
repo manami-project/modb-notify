@@ -7,7 +7,6 @@ import io.github.manamiproject.modb.core.downloader.Downloader
 import io.github.manamiproject.modb.core.extensions.EMPTY
 import io.github.manamiproject.modb.core.httpclient.DefaultHttpClient
 import io.github.manamiproject.modb.core.httpclient.HttpClient
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 
 /**
@@ -21,13 +20,8 @@ public class NotifyDownloader(
     private val httpClient: HttpClient = DefaultHttpClient(isTestContext = config.isTestContext()),
 ) : Downloader {
 
-    @Deprecated("Use coroutines", ReplaceWith(EMPTY))
-    override fun download(id: AnimeId, onDeadEntry: (AnimeId) -> Unit): String = runBlocking {
-        downloadSuspendable(id, onDeadEntry)
-    }
-
-    override suspend fun downloadSuspendable(id: AnimeId, onDeadEntry: suspend (AnimeId) -> Unit): String = withContext(LIMITED_NETWORK) {
-        val response = httpClient.getSuspedable(config.buildDataDownloadLink(id).toURL())
+    override suspend fun download(id: AnimeId, onDeadEntry: suspend (AnimeId) -> Unit): String = withContext(LIMITED_NETWORK) {
+        val response = httpClient.get(config.buildDataDownloadLink(id).toURL())
 
         check(response.body.isNotBlank()) { "Response body was blank for [notifyId=$id] with response code [${response.code}]" }
 
