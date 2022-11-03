@@ -43,7 +43,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
 
         // when
         val result = runBlocking {
-            downloader.downloadSuspendable(id) {
+            downloader.download(id) {
                 shouldNotBeInvoked()
             }
         }
@@ -77,7 +77,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
 
         // when
         runBlocking {
-            downloader.downloadSuspendable(id) {
+            downloader.download(id) {
                 deadEntriesHasBeenInvoked = true
             }
         }
@@ -109,7 +109,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
 
         // when
         val result = exceptionExpected<IllegalStateException> {
-            downloader.downloadSuspendable(id) {
+            downloader.download(id) {
                 shouldNotBeInvoked()
             }
         }
@@ -143,7 +143,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
 
         // when
         val result = exceptionExpected<IllegalStateException> {
-            downloader.downloadSuspendable(id.toAnimeId()) { shouldNotBeInvoked() }
+            downloader.download(id.toAnimeId()) { shouldNotBeInvoked() }
         }
 
         // then
