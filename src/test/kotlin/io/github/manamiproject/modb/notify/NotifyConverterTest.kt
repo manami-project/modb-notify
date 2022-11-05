@@ -1,6 +1,6 @@
 package io.github.manamiproject.modb.notify
 
-import io.github.manamiproject.modb.core.extensions.copyToSuspedable
+import io.github.manamiproject.modb.core.extensions.copyTo
 import io.github.manamiproject.modb.core.models.Anime
 import io.github.manamiproject.modb.core.models.Anime.Status.*
 import io.github.manamiproject.modb.core.models.Anime.Type.*
@@ -13,7 +13,7 @@ import io.github.manamiproject.modb.test.testResource
 import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Nested
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 import org.junit.jupiter.api.assertThrows
 import java.net.URI
 import kotlin.io.path.createDirectory
@@ -36,9 +36,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
     
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
     
                     // then
                     assertThat(result.title).isEqualTo("Tobidasu PriPara: Mi~nna de Mezase! Idol☆Grand Prix")
@@ -58,9 +56,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.type).isEqualTo(TV)
@@ -76,9 +72,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.type).isEqualTo(MOVIE)
@@ -94,9 +88,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.type).isEqualTo(ONA)
@@ -112,9 +104,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.type).isEqualTo(OVA)
@@ -130,9 +120,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.type).isEqualTo(SPECIAL)
@@ -148,9 +136,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.type).isEqualTo(SPECIAL)
@@ -170,9 +156,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.episodes).isEqualTo(39)
@@ -192,9 +176,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.picture).isEqualTo(URI("https://media.notify.moe/images/anime/large/IkCdhKimR.webp"))
@@ -215,9 +197,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.synonyms).containsExactly(
@@ -227,7 +207,7 @@ internal class NotifyConverterTest {
                         "The Ancient Magus' Bride",
                         "The Magician's Bride",
                         "まほよめ",
-                        "魔法使いの嫁"
+                        "魔法使いの嫁",
                     )
                 }
             }
@@ -241,9 +221,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.synonyms).containsExactly("こぶとり")
@@ -263,9 +241,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.sources).containsExactly(URI("https://notify.moe/anime/0-A-5Fimg"))
@@ -287,9 +263,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir =  relationsDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.relatedAnime).isEmpty()
@@ -304,17 +278,13 @@ internal class NotifyConverterTest {
 
                     val srcFile = loadTestResource("file_converter_tests/related_anime/multiple_relations/anime.json")
 
-                    runBlocking {
-                        testResource("file_converter_tests/related_anime/multiple_relations/relations.json")
-                            .copyToSuspedable(relationsDir.resolve("uLs5tKiig.${NotifyRelationsConfig.fileSuffix()}"))
-                    }
+                    testResource("file_converter_tests/related_anime/multiple_relations/relations.json")
+                        .copyTo(relationsDir.resolve("uLs5tKiig.${NotifyRelationsConfig.fileSuffix()}"))
 
                     val converter = NotifyConverter(relationsDir =  relationsDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(srcFile)
-                    }
+                    val result = converter.convert(srcFile)
 
                     // then
                     assertThat(result.relatedAnime).containsExactly(
@@ -323,7 +293,7 @@ internal class NotifyConverterTest {
                         URI("https://notify.moe/anime/T7qwpKmig"),
                         URI("https://notify.moe/anime/U66k2FimR"),
                         URI("https://notify.moe/anime/eav4hFmiR"),
-                        URI("https://notify.moe/anime/vvIppKiiR")
+                        URI("https://notify.moe/anime/vvIppKiiR"),
                     )
                 }
             }
@@ -336,17 +306,13 @@ internal class NotifyConverterTest {
 
                     val srcFile = loadTestResource("file_converter_tests/related_anime/no_relations/anime.json")
 
-                    runBlocking {
-                        testResource("file_converter_tests/related_anime/no_relations/relations.json")
-                            .copyToSuspedable(relationsDir.resolve("uLs5tKiig.${NotifyRelationsConfig.fileSuffix()}"))
-                    }
+                    testResource("file_converter_tests/related_anime/no_relations/relations.json")
+                        .copyTo(relationsDir.resolve("uLs5tKiig.${NotifyRelationsConfig.fileSuffix()}"))
 
                     val converter = NotifyConverter(relationsDir =  relationsDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(srcFile)
-                    }
+                    val result = converter.convert(srcFile)
 
                     // then
                     assertThat(result.relatedAnime).isEmpty()
@@ -362,17 +328,13 @@ internal class NotifyConverterTest {
 
                     val srcFile = loadTestResource("file_converter_tests/related_anime/items_in_relations_file_is_null/anime.json")
 
-                    runBlocking {
-                        testResource("file_converter_tests/related_anime/items_in_relations_file_is_null/relations.json")
-                            .copyToSuspedable(relationsDir.resolve("--eZhFiig.${NotifyRelationsConfig.fileSuffix()}"))
-                    }
+                    testResource("file_converter_tests/related_anime/items_in_relations_file_is_null/relations.json")
+                        .copyTo(relationsDir.resolve("--eZhFiig.${NotifyRelationsConfig.fileSuffix()}"))
 
                     val converter = NotifyConverter(relationsDir =  relationsDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(srcFile)
-                    }
+                    val result = converter.convert(srcFile)
 
                     // then
                     assertThat(result.relatedAnime).isEmpty()
@@ -392,9 +354,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.status).isEqualTo(ONGOING)
@@ -410,9 +370,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.status).isEqualTo(FINISHED)
@@ -428,9 +386,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.status).isEqualTo(UPCOMING)
@@ -446,9 +402,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.status).isEqualTo(Anime.Status.UNKNOWN)
@@ -468,9 +422,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.tags).containsExactly(
@@ -491,9 +443,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.tags).isEmpty()
@@ -513,9 +463,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.duration).isEqualTo(Duration(0, SECONDS))
@@ -531,9 +479,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.duration).isEqualTo(Duration(24, MINUTES))
@@ -549,9 +495,7 @@ internal class NotifyConverterTest {
                     val converter = NotifyConverter(relationsDir = tempDir)
 
                     // when
-                    val result = runBlocking {
-                        converter.convert(testFile)
-                    }
+                    val result = converter.convert(testFile)
 
                     // then
                     assertThat(result.duration).isEqualTo(Duration(2, HOURS))
@@ -574,9 +518,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.isYearOfPremiereUnknown()).isTrue()
@@ -592,9 +534,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.year).isEqualTo(1989)
@@ -610,9 +550,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.season).isEqualTo(UNDEFINED)
@@ -628,9 +566,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.season).isEqualTo(SPRING)
@@ -646,9 +582,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.season).isEqualTo(SUMMER)
@@ -664,9 +598,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.season).isEqualTo(FALL)
@@ -682,9 +614,7 @@ internal class NotifyConverterTest {
                         val converter = NotifyConverter(relationsDir = tempDir)
 
                         // when
-                        val result = runBlocking {
-                            converter.convert(testFile)
-                        }
+                        val result = converter.convert(testFile)
 
                         // then
                         assertThat(result.animeSeason.season).isEqualTo(WINTER)

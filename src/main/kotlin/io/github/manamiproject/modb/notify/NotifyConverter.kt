@@ -43,7 +43,7 @@ public class NotifyConverter(
             thumbnail = extractThumbnail(document),
             status = extractStatus(document),
             duration = extractDuration(document),
-            animeSeason = extractAnimeSeason(document)
+            animeSeason = extractAnimeSeason(document),
         ).apply {
             addSources(extractSourcesEntry(document))
             addSynonyms(extractSynonyms(document))
