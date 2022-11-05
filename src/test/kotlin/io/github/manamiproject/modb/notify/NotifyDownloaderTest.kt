@@ -15,75 +15,75 @@ import io.github.manamiproject.modb.test.exceptionExpected
 import io.github.manamiproject.modb.test.shouldNotBeInvoked
 import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Test
+import kotlin.test.Test
 import java.net.URI
 
 internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by WireMockServerCreator() {
 
     @Test
     fun `successfully download an anime`() {
-        // given
-        val testConfig = object: MetaDataProviderConfig by NotifyConfig {
-            override fun hostname(): Hostname = "localhost"
-            override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
-        }
+        runBlocking {
+            // given
+            val testConfig = object : MetaDataProviderConfig by NotifyConfig {
+                override fun hostname(): Hostname = "localhost"
+                override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
+            }
 
-        val id = "drmaMJIZg"
+            val id = "drmaMJIZg"
 
-        serverInstance.stubFor(
-            get(urlPathEqualTo("/anime/$id")).willReturn(
-                aResponse()
-                    .withHeader("Content-Type", APPLICATION_JSON)
-                    .withStatus(200)
-                    .withBody("{ \"notifyId\": $id }")
+            serverInstance.stubFor(
+                get(urlPathEqualTo("/anime/$id")).willReturn(
+                    aResponse()
+                        .withHeader("Content-Type", APPLICATION_JSON)
+                        .withStatus(200)
+                        .withBody("{ \"notifyId\": $id }")
+                )
             )
-        )
 
-        val downloader = NotifyDownloader(testConfig)
+            val downloader = NotifyDownloader(testConfig)
 
-        // when
-        val result = runBlocking {
-            downloader.download(id) {
+            // when
+            val result = downloader.download(id) {
                 shouldNotBeInvoked()
             }
-        }
 
-        // then
-        assertThat(result).isEqualTo("{ \"notifyId\": drmaMJIZg }")
+            // then
+            assertThat(result).isEqualTo("{ \"notifyId\": drmaMJIZg }")
+        }
     }
 
     @Test
     fun `invoke lambda in case of a dead entry`() {
-        // given
-        val testConfig = object: MetaDataProviderConfig by NotifyConfig {
-            override fun hostname(): Hostname = "localhost"
-            override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
-        }
-
-        val id = "drmaMJIZg"
-
-        serverInstance.stubFor(
-            get(urlPathEqualTo("/anime/$id")).willReturn(
-                aResponse()
-                    .withHeader("Content-Type", "plain/text")
-                    .withStatus(404)
-                    .withBody("Not found: Key not found:")
-            )
-        )
-
-        val downloader = NotifyDownloader(testConfig)
-
-        var deadEntriesHasBeenInvoked = false
-
-        // when
         runBlocking {
+            // given
+            val testConfig = object : MetaDataProviderConfig by NotifyConfig {
+                override fun hostname(): Hostname = "localhost"
+                override fun buildDataDownloadLink(id: String): URI = URI("http://localhost:$port/anime/$id")
+            }
+
+            val id = "drmaMJIZg"
+
+            serverInstance.stubFor(
+                get(urlPathEqualTo("/anime/$id")).willReturn(
+                    aResponse()
+                        .withHeader("Content-Type", "plain/text")
+                        .withStatus(404)
+                        .withBody("Not found: Key not found:")
+                )
+            )
+
+            val downloader = NotifyDownloader(testConfig)
+
+            var deadEntriesHasBeenInvoked = false
+
+            // when
             downloader.download(id) {
                 deadEntriesHasBeenInvoked = true
             }
-        }
 
-        // then
-        assertThat(deadEntriesHasBeenInvoked).isTrue()
+            // then
+            assertThat(deadEntriesHasBeenInvoked).isTrue()
+        }
     }
 
     @Test
