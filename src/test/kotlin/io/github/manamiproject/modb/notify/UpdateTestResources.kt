@@ -19,7 +19,7 @@ internal fun main() {
         downloader.download("_SZLtKimR").writeToFile(resourceFile("file_converter_tests/anime_season/undefined.json"))
         downloader.download("ohndcHvmg").writeToFile(resourceFile("file_converter_tests/anime_season/winter.json"))
     
-        downloader.download("BEHHhFiiR").writeToFile(resourceFile("file_converter_tests/duration/0.json"))
+        downloader.download("UrvVnSpng").writeToFile(resourceFile("file_converter_tests/duration/0.json"))
         downloader.download("gLmp5FimR").writeToFile(resourceFile("file_converter_tests/duration/24.json"))
         downloader.download("tMrEpKiig").writeToFile(resourceFile("file_converter_tests/duration/120.json"))
     
@@ -37,10 +37,10 @@ internal fun main() {
     
         downloader.download("0-A-5Fimg").writeToFile(resourceFile("file_converter_tests/sources/0-A-5Fimg.json"))
     
-        downloader.download("Y2eEDZzMR").writeToFile(resourceFile("file_converter_tests/status/current.json"))
+        downloader.download("CqN9Rja7R").writeToFile(resourceFile("file_converter_tests/status/current.json"))
         downloader.download("Ml2V2KiiR").writeToFile(resourceFile("file_converter_tests/status/finished.json"))
-        downloader.download("OkibM4KGg").writeToFile(resourceFile("file_converter_tests/status/tba.json"))
-        downloader.download("rBaaLj2Wg").writeToFile(resourceFile("file_converter_tests/status/upcoming.json"))
+        downloader.download("DCzg6xMnR").writeToFile(resourceFile("file_converter_tests/status/tba.json"))
+        downloader.download("xnKYKwHVg").writeToFile(resourceFile("file_converter_tests/status/upcoming.json"))
     
         downloader.download("DtwM2Kmig").writeToFile(resourceFile("file_converter_tests/synonyms/combine_non_canonical_title_and_synonyms.json"))
         downloader.download("rTgwpFmmg").writeToFile(resourceFile("file_converter_tests/synonyms/synonyms_is_null.json"))

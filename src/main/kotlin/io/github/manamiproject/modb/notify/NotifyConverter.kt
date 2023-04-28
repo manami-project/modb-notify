@@ -68,9 +68,9 @@ public class NotifyConverter(
         }
     }
 
-    private fun extractPicture(document: NotifyDocument) = URI("https://media.notify.moe/images/anime/large/${document.id}.webp")
+    private fun extractPicture(document: NotifyDocument) = URI("https://media.notify.moe/images/anime/large/${document.id}${document.image.extension}")
 
-    private fun extractThumbnail(document: NotifyDocument) = URI("https://media.notify.moe/images/anime/small/${document.id}.webp")
+    private fun extractThumbnail(document: NotifyDocument) = URI("https://media.notify.moe/images/anime/small/${document.id}${document.image.extension}")
 
     private fun extractSynonyms(document: NotifyDocument): List<Title> {
         val synonyms: List<String> = (document.title[SYNONYMS] as List<*>?)?.map { it as String } ?: emptyList()
@@ -143,13 +143,18 @@ private data class NotifyDocument(
     val status: String,
     val episodeCount: Int,
     val episodeLength: Int,
-    val genres: List<String>?
+    val genres: List<String>?,
+    val image: NotifyImage,
+)
+
+private data class NotifyImage(
+    val extension: String,
 )
 
 private data class NotifyRelations(
-    val items: List<NotifyRelation>?
+    val items: List<NotifyRelation>?,
 )
 
 private data class NotifyRelation(
-    val animeId: String
+    val animeId: String,
 )

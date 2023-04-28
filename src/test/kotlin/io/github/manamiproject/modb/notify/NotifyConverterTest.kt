@@ -10,7 +10,6 @@ import io.github.manamiproject.modb.core.models.Duration.TimeUnit.*
 import io.github.manamiproject.modb.test.loadTestResource
 import io.github.manamiproject.modb.test.tempDirectory
 import io.github.manamiproject.modb.test.testResource
-import kotlinx.coroutines.runBlocking
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Nested
 import kotlin.test.Test
@@ -179,8 +178,8 @@ internal class NotifyConverterTest {
                     val result = converter.convert(testFile)
 
                     // then
-                    assertThat(result.picture).isEqualTo(URI("https://media.notify.moe/images/anime/large/IkCdhKimR.webp"))
-                    assertThat(result.thumbnail).isEqualTo(URI("https://media.notify.moe/images/anime/small/IkCdhKimR.webp"))
+                    assertThat(result.picture).isEqualTo(URI("https://media.notify.moe/images/anime/large/IkCdhKimR.jpg"))
+                    assertThat(result.thumbnail).isEqualTo(URI("https://media.notify.moe/images/anime/small/IkCdhKimR.jpg"))
                 }
             }
         }
@@ -346,7 +345,7 @@ internal class NotifyConverterTest {
         inner class StatusTests {
 
             @Test
-            fun `'current' is mapped to 'CURRENTLY_AIRING'`() {
+            fun `'current' is mapped to 'ONGOING'`() {
                 tempDirectory {
                     // given
                     val testFile = loadTestResource("file_converter_tests/status/current.json")
@@ -362,7 +361,7 @@ internal class NotifyConverterTest {
             }
 
             @Test
-            fun `'finished' is mapped to 'FINISHED_AIRING'`() {
+            fun `'finished' is mapped to 'FINISHED'`() {
                 tempDirectory {
                     // given
                     val testFile = loadTestResource("file_converter_tests/status/finished.json")
@@ -378,7 +377,7 @@ internal class NotifyConverterTest {
             }
 
             @Test
-            fun `'upcoming' is mapped to 'FINISHED_AIRING'`() {
+            fun `'upcoming' is mapped to 'UPCOMING'`() {
                 tempDirectory {
                     // given
                     val testFile = loadTestResource("file_converter_tests/status/upcoming.json")
@@ -455,7 +454,7 @@ internal class NotifyConverterTest {
         inner class DurationTests {
 
             @Test
-            fun `notify only uses minutes for duration - 0 implies a duration of less than a minute`() {
+            fun `notify only uses minutes for duration - 0 implies a duration of less than a minute or duration is unknown`() {
                 tempDirectory {
                     // given
                     val testFile = loadTestResource("file_converter_tests/duration/0.json")
