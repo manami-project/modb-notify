@@ -100,7 +100,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
             get(urlPathEqualTo("/anime/$id")).willReturn(
                 aResponse()
                     .withHeader("Content-Type", "text/plain")
-                    .withStatus(500)
+                    .withStatus(400)
                     .withBody("Internal Server Error")
             )
         )
@@ -115,7 +115,7 @@ internal class NotifyDownloaderTest : MockServerTestCase<WireMockServer> by Wire
         }
 
         // then
-        assertThat(result).hasMessage("Unable to determine the correct case for [notifyId=$id], [responseCode=500]")
+        assertThat(result).hasMessage("Unable to determine the correct case for [notifyId=$id], [responseCode=400]")
     }
 
     @Test
