@@ -1,8 +1,8 @@
 package io.github.manamiproject.modb.notify
 
+import io.github.manamiproject.modb.core.coroutines.CoroutineManager.runCoroutine
 import io.github.manamiproject.modb.core.extensions.writeToFile
 import io.github.manamiproject.modb.test.testResource
-import kotlinx.coroutines.runBlocking
 import java.nio.file.Path
 import java.nio.file.Paths
 
@@ -10,7 +10,7 @@ internal fun main() {
     val downloader = NotifyDownloader(NotifyConfig)
     val relationsDownloader = NotifyDownloader(NotifyRelationsConfig)
     
-    runBlocking { 
+    runCoroutine {
         downloader.download("w1khcFmig").writeToFile(resourceFile("file_converter_tests/anime_season/1989.json"))
         downloader.download("5Vd6nwsiR").writeToFile(resourceFile("file_converter_tests/anime_season/fall.json"))
         downloader.download("_SZLtKimR").writeToFile(resourceFile("file_converter_tests/anime_season/no_year.json"))
@@ -56,6 +56,8 @@ internal fun main() {
         downloader.download("MYsOvq7ig").writeToFile(resourceFile("file_converter_tests/type/ova.json"))
         downloader.download("a8RVhKmmR").writeToFile(resourceFile("file_converter_tests/type/special.json"))
         downloader.download("Ml2V2KiiR").writeToFile(resourceFile("file_converter_tests/type/tv.json"))
+
+        println("Done")
     }
 }
 
