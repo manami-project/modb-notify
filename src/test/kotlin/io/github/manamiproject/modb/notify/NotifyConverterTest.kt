@@ -30,7 +30,7 @@ internal class NotifyConverterTest {
             fun `title containing special chars`() {
                 tempDirectory { 
                     // given
-                    val testFile = loadTestResource("file_converter_tests/title/special_chars.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/title/special_chars.json")
     
                     val converter = NotifyConverter(relationsDir = tempDir)
     
@@ -50,7 +50,7 @@ internal class NotifyConverterTest {
             fun `type is TV`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/type/tv.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/type/tv.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -66,7 +66,7 @@ internal class NotifyConverterTest {
             fun `type is Movie`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/type/movie.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/type/movie.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -82,7 +82,7 @@ internal class NotifyConverterTest {
             fun `type is ONA`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/type/ona.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/type/ona.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -98,7 +98,7 @@ internal class NotifyConverterTest {
             fun `type is OVA`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/type/ova.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/type/ova.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -114,7 +114,7 @@ internal class NotifyConverterTest {
             fun `type is Special`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/type/special.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/type/special.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -130,7 +130,7 @@ internal class NotifyConverterTest {
             fun `'music' is mapped to Special`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/type/music.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/type/music.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -150,7 +150,7 @@ internal class NotifyConverterTest {
             fun `39 episodes`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/episodes/39.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/episodes/39.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -170,7 +170,7 @@ internal class NotifyConverterTest {
             fun `picture and thumbnail`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/picture_and_thumbnail/picture_and_thumbnail_available.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/picture_and_thumbnail/picture_and_thumbnail_available.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -191,7 +191,7 @@ internal class NotifyConverterTest {
             fun `all non main titles and the synonyms are combined`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/synonyms/combine_non_canonical_title_and_synonyms.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/synonyms/combine_non_canonical_title_and_synonyms.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -215,7 +215,7 @@ internal class NotifyConverterTest {
             fun `synonyms is null`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/synonyms/synonyms_is_null.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/synonyms/synonyms_is_null.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -235,7 +235,7 @@ internal class NotifyConverterTest {
             fun `extract id 0-A-5Fimg`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/sources/0-A-5Fimg.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/sources/0-A-5Fimg.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -257,7 +257,7 @@ internal class NotifyConverterTest {
                     // given
                     val relationsDir = tempDir.resolve("relations").createDirectory()
 
-                    val testFile = loadTestResource("file_converter_tests/related_anime/no_relations_file/anime.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/related_anime/no_relations_file/anime.json")
 
                     val converter = NotifyConverter(relationsDir =  relationsDir)
 
@@ -275,7 +275,7 @@ internal class NotifyConverterTest {
                     // given
                     val relationsDir = tempDir.resolve("relations").createDirectory()
 
-                    val srcFile = loadTestResource("file_converter_tests/related_anime/multiple_relations/anime.json")
+                    val srcFile = loadTestResource<String>("file_converter_tests/related_anime/multiple_relations/anime.json")
 
                     testResource("file_converter_tests/related_anime/multiple_relations/relations.json")
                         .copyTo(relationsDir.resolve("uLs5tKiig.${NotifyRelationsConfig.fileSuffix()}"))
@@ -303,7 +303,7 @@ internal class NotifyConverterTest {
                     // given
                     val relationsDir = tempDir.resolve("relations").createDirectory()
 
-                    val srcFile = loadTestResource("file_converter_tests/related_anime/no_relations/anime.json")
+                    val srcFile = loadTestResource<String>("file_converter_tests/related_anime/no_relations/anime.json")
 
                     testResource("file_converter_tests/related_anime/no_relations/relations.json")
                         .copyTo(relationsDir.resolve("uLs5tKiig.${NotifyRelationsConfig.fileSuffix()}"))
@@ -325,7 +325,7 @@ internal class NotifyConverterTest {
                     // given
                     val relationsDir = tempDir.resolve("relations").createDirectory()
 
-                    val srcFile = loadTestResource("file_converter_tests/related_anime/items_in_relations_file_is_null/anime.json")
+                    val srcFile = loadTestResource<String>("file_converter_tests/related_anime/items_in_relations_file_is_null/anime.json")
 
                     testResource("file_converter_tests/related_anime/items_in_relations_file_is_null/relations.json")
                         .copyTo(relationsDir.resolve("--eZhFiig.${NotifyRelationsConfig.fileSuffix()}"))
@@ -348,7 +348,7 @@ internal class NotifyConverterTest {
             fun `'current' is mapped to 'ONGOING'`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/status/current.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/status/current.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -364,7 +364,7 @@ internal class NotifyConverterTest {
             fun `'finished' is mapped to 'FINISHED'`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/status/finished.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/status/finished.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -380,7 +380,7 @@ internal class NotifyConverterTest {
             fun `'upcoming' is mapped to 'UPCOMING'`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/status/upcoming.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/status/upcoming.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -396,7 +396,7 @@ internal class NotifyConverterTest {
             fun `'tba' is mapped to 'UNKNOWN'`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/status/tba.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/status/tba.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -416,7 +416,7 @@ internal class NotifyConverterTest {
             fun `put genres into tags`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/tags/tags_from_genres.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/tags/tags_from_genres.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -437,7 +437,7 @@ internal class NotifyConverterTest {
             fun `genres is null`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/tags/genres_is_null.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/tags/genres_is_null.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -457,7 +457,7 @@ internal class NotifyConverterTest {
             fun `notify only uses minutes for duration - 0 implies a duration of less than a minute or duration is unknown`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/duration/0.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/duration/0.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -473,7 +473,7 @@ internal class NotifyConverterTest {
             fun `duration of 24 minutes`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/duration/24.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/duration/24.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -489,7 +489,7 @@ internal class NotifyConverterTest {
             fun `duration of 2 hours`() {
                 tempDirectory {
                     // given
-                    val testFile = loadTestResource("file_converter_tests/duration/120.json")
+                    val testFile = loadTestResource<String>("file_converter_tests/duration/120.json")
 
                     val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -512,7 +512,7 @@ internal class NotifyConverterTest {
                 fun `no year`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/no_year.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/no_year.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -528,7 +528,7 @@ internal class NotifyConverterTest {
                 fun `year of premiere is 1989`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/1989.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/1989.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -544,7 +544,7 @@ internal class NotifyConverterTest {
                 fun `season is 'undefined'`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/undefined.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/undefined.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -560,7 +560,7 @@ internal class NotifyConverterTest {
                 fun `season is 'spring'`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/spring.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/spring.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -576,7 +576,7 @@ internal class NotifyConverterTest {
                 fun `season is 'summer'`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/summer.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/summer.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -592,7 +592,7 @@ internal class NotifyConverterTest {
                 fun `season is 'fall'`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/fall.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/fall.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
@@ -608,7 +608,7 @@ internal class NotifyConverterTest {
                 fun `season is 'winter'`() {
                     tempDirectory {
                         // given
-                        val testFile = loadTestResource("file_converter_tests/anime_season/winter.json")
+                        val testFile = loadTestResource<String>("file_converter_tests/anime_season/winter.json")
 
                         val converter = NotifyConverter(relationsDir = tempDir)
 
