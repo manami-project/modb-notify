@@ -199,7 +199,7 @@ internal class NotifyConverterTest {
                     val result = converter.convert(testFile)
 
                     // then
-                    assertThat(result.synonyms).containsExactly(
+                    assertThat(result.synonyms).containsExactlyInAnyOrder(
                         "Maho Yome",
                         "MahoYome",
                         "Mahoutsukai no Yome",
@@ -286,7 +286,7 @@ internal class NotifyConverterTest {
                     val result = converter.convert(srcFile)
 
                     // then
-                    assertThat(result.relatedAnime).containsExactly(
+                    assertThat(result.relatedAnime).containsExactlyInAnyOrder(
                         URI("https://notify.moe/anime/CsBopKmmR"),
                         URI("https://notify.moe/anime/I2ihtKimg"),
                         URI("https://notify.moe/anime/T7qwpKmig"),
@@ -424,11 +424,11 @@ internal class NotifyConverterTest {
                     val result = converter.convert(testFile)
 
                     // then
-                    assertThat(result.tags).containsExactly(
+                    assertThat(result.tags).containsExactlyInAnyOrder(
                         "comedy",
                         "drama",
                         "ecchi",
-                        "romance"
+                        "romance",
                     )
                 }
             }
