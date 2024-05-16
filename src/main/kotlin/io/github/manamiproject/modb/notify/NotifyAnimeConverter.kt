@@ -28,7 +28,7 @@ import java.net.URI
  * @param relationsDir Directory containing the raw files for the related anime.
  * @throws IllegalArgumentException if the [relationsDir] doesn't exist or is not a directory.
  */
-public class NotifyConverter(
+public class NotifyAnimeConverter(
     private val config: MetaDataProviderConfig = NotifyConfig,
     private val extractor: DataExtractor = JsonDataExtractor,
     private val relationsDir: Directory,
