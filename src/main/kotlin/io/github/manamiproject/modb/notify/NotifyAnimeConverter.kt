@@ -3,10 +3,7 @@ package io.github.manamiproject.modb.notify
 import io.github.manamiproject.modb.core.config.MetaDataProviderConfig
 import io.github.manamiproject.modb.core.converter.AnimeConverter
 import io.github.manamiproject.modb.core.coroutines.ModbDispatchers.LIMITED_CPU
-import io.github.manamiproject.modb.core.extensions.Directory
-import io.github.manamiproject.modb.core.extensions.directoryExists
-import io.github.manamiproject.modb.core.extensions.readFile
-import io.github.manamiproject.modb.core.extensions.regularFileExists
+import io.github.manamiproject.modb.core.extensions.*
 import io.github.manamiproject.modb.core.extractor.DataExtractor
 import io.github.manamiproject.modb.core.extractor.ExtractionResult
 import io.github.manamiproject.modb.core.extractor.JsonDataExtractor
@@ -140,7 +137,7 @@ public class NotifyAnimeConverter(
     private fun extractDuration(data: ExtractionResult) = Duration(data.int("episodeLength"), MINUTES)
 
     private fun extractAnimeSeason(data: ExtractionResult): AnimeSeason {
-        val month = Regex("-[0-9]{2}-").findAll(data.string("startDate")).firstOrNull()?.value?.replace("-", "")?.toInt() ?: 0
+        val month = Regex("-[0-9]{2}-").findAll(data.string("startDate")).firstOrNull()?.value?.remove("-")?.toInt() ?: 0
         val year = Regex("[0-9]{4}").findAll(data.string("startDate")).firstOrNull()?.value?.toInt() ?: AnimeSeason.UNKNOWN_YEAR
 
         val season = when(month) {
