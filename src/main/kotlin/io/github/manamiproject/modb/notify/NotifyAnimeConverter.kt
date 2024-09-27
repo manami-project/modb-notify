@@ -21,12 +21,12 @@ import java.net.URI
  * The conversion requires two files. The file with all main data and a second file containing related anime.
  * IDs are always identical. If an anime doesn't provide any related anime it still has to have a file for related anime.
  * @since 1.0.0
- * @param config Configuration
+ * @param metaDataProviderConfig Configuration
  * @param relationsDir Directory containing the raw files for the related anime.
  * @throws IllegalArgumentException if the [relationsDir] doesn't exist or is not a directory.
  */
 public class NotifyAnimeConverter(
-    private val config: MetaDataProviderConfig = NotifyConfig,
+    private val metaDataProviderConfig: MetaDataProviderConfig = NotifyConfig,
     private val extractor: DataExtractor = JsonDataExtractor,
     private val relationsDir: Directory,
 ) : AnimeConverter {
@@ -104,10 +104,10 @@ public class NotifyAnimeConverter(
         return titles.union(synonyms).toHashSet()
     }
 
-    private fun extractSourcesEntry(data: ExtractionResult) = hashSetOf(config.buildAnimeLink(data.string("id").trim()))
+    private fun extractSourcesEntry(data: ExtractionResult) = hashSetOf(metaDataProviderConfig.buildAnimeLink(data.string("id").trim()))
 
     private suspend fun extractRelatedAnime(data: ExtractionResult): HashSet<URI> = withContext(LIMITED_CPU) {
-        val relationsFile = relationsDir.resolve("${data.string("id")}.${config.fileSuffix()}")
+        val relationsFile = relationsDir.resolve("${data.string("id")}.${metaDataProviderConfig.fileSuffix()}")
 
         return@withContext if (relationsFile.regularFileExists()) {
             val relatedAnimeData = extractor.extract(relationsFile.readFile(), mapOf(
@@ -117,7 +117,7 @@ public class NotifyAnimeConverter(
             if (relatedAnimeData.notFound("relatedAnimeIds")) {
                 hashSetOf()
             } else {
-                relatedAnimeData.listNotNull<URI>("relatedAnimeIds") { config.buildAnimeLink(it.trim()) }.toHashSet()
+                relatedAnimeData.listNotNull<URI>("relatedAnimeIds") { metaDataProviderConfig.buildAnimeLink(it.trim()) }.toHashSet()
             }
         } else {
             hashSetOf()
